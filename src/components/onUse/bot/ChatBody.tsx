@@ -1,6 +1,7 @@
 // components/ChatBody.tsx
 import React, { useEffect } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import Marked from "@/components/ui/Marked";
 import { Bot, User2 } from 'lucide-react';
 import LoadingAnimation from '@/components/onUse/bot/loadingAnimation';
 interface ChatBodyProps {
@@ -22,13 +23,13 @@ const ChatBody: React.FC<ChatBodyProps> = ({ chatHistory, loading, chatEndRef })
                 {chatHistory.map((msg, index) => (
                     <div
                         key={index}
-                        className={`flex items-start gap-2 mb-2 ${msg.role === 'user' ? 'justify-end' : 'justify-start'
+                        className={`flex items-start gap-4 mb-10 ${msg.role === 'user' ? 'justify-end' : 'justify-start'
                             }`}
                     >
                         {msg.role === 'user' ? (
                             <>
                                 <div
-                                    className={`inline-block p-2 rounded-lg text-sm bg-primary text-secondary`}
+                                    className={`inline-block rounded-lg text-sm bg-primary text-white px-4 py-2`}
                                 >
                                     {msg.content}
                                 </div>
@@ -54,9 +55,9 @@ const ChatBody: React.FC<ChatBodyProps> = ({ chatHistory, loading, chatEndRef })
                                     </AvatarFallback>
                                 </Avatar>
                                 <div
-                                    className={`inline-block p-2 rounded-lg bg-secondary text-sm`}
+                                    className={`inline-block px-2 rounded-lg bg-secondary text-sm`}
                                 >
-                                    {msg.content}
+                                    <Marked md={msg.content} />
                                 </div>
                             </>
                         )}
