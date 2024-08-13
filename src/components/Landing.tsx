@@ -2,6 +2,7 @@
 import React from 'react';
 import ChatComponent from '@/components/onUse/bot/ChatComponent';
 import { ChevronRight, Github } from 'lucide-react';
+import { GitHubLogo } from '@/components/icons/icons';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import AnimatedGradientText from "@/components/ui/AnimatedGradientText";
@@ -17,9 +18,10 @@ const Landing = () => {
                     Discover Our Advanced AI Chatbot : v.1.0.0
                 </AnimatedGradientText>
 
-                <h1 className="max-w-2xl mx-auto text-center font-manrope font-bold text-3xl md:text-5xl leading-[50px] ">
-                    Elevate Your Website with  <span className="bg-primary text-white px-2 rounded-md">Vortigon</span>Chatbot
-
+                <h1 className="max-w-2xl mx-auto text-center font-bold text-3xl md:text-5xl leading-[50px] flex flex-col items-center">
+                    Elevate Your Website with  <div className='flex m-2 items-center gap-1'>
+                    <span className="bg-primary text-white px-4 py-2 rounded-md">Vortigon</span>Chatbot
+                    </div>
                 </h1>
 
                 <p className="max-w-lg mx-auto text-center text-base font-normal leading-7 text-muted-foreground">
@@ -28,7 +30,7 @@ const Landing = () => {
 
                 <Link href="https://github.com/nabinkhair42" target="_blank" rel="noopener noreferrer">
                     <Button className='flex gap-[2px] py-2 rounded-md px-4 items-center justify-center'>
-                        <Github className="mr-2" />
+                        <GitHubLogo/>
                         GitHub
                     </Button>
                 </Link>
